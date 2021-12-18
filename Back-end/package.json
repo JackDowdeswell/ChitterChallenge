@@ -1,0 +1,15 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "chitter-back-end",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Back-end/server.js"
+  },
+  "author": "Jack Dowdeswell",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
