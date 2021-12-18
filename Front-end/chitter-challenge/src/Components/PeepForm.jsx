@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default function PeepForm() {
@@ -32,17 +33,21 @@ export default function PeepForm() {
         <>
             <form onSubmit={sendPeep}>
                 <div className='mb-3 container'>
-                    <label for="peepTextbox" class="form-label name-form">Enter your name:</label>
+                    <label className="form-label name-form">Enter your name:</label>
                     <input type="text" id="name" name="name" className='form-control' placeholder='Full Name' onChange={handleChange}></input>
                 </div>
-                <div class="mb-3 container">
-                    <label for="peepTextbox" class="form-label">Start typing your peep in the box below</label>
-                    <textarea class="form-control" id="peepTextbox" name="peep" rows="3" placeholder='I had a great day today...' onChange={handleChange}></textarea>
+                <div className="mb-3 container">
+                    <label className="form-label">Start typing your peep in the box below</label>
+                    <textarea className="form-control" id="peepTextbox" name="peep" rows="3" placeholder='I had a great day today...' onChange={handleChange}></textarea>
                 </div>
-                <div class="mb-3 container">
-                    <button type="submit" class="btn btn-warning">Post Peep</button>
+                <div className="mb-3 container">
+                    <button type="submit" className="btn btn-warning">Post Peep</button>
                 </div>
             </form>
+
+            <Link to="/peeps">
+                <button type="button" className="viewAll btn btn-warning">View all Peeps</button>
+            </Link>
         </>
     )
 }

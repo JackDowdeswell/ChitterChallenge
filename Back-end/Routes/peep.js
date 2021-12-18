@@ -17,6 +17,16 @@ router.route(`/`)
                 res.send("Peep has been stored");
             }
         });
-    });
+    })
+
+    .get((req, res) => {
+        User.find({}, (err, users) => {
+            if (err) {
+                res.send(err);
+                next();
+            }
+            res.send({ users });
+        })
+    })
 
 export { router as peep };
