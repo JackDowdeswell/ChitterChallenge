@@ -1,4 +1,5 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import PeepForm from './Components/PeepForm';
 
 function App() {
@@ -6,7 +7,9 @@ function App() {
     <>
       <body className="app">
         <h1 className="chitterTitle">Chitter </h1><h1 className="bird">🐤</h1>
-        <PeepForm />
+        <Routes>
+          <Route exact path="/" element={<PeepForm />} />
+        </Routes>
       </body>
     </>
   );
