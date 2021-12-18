@@ -5,7 +5,8 @@ import axios from 'axios';
 export default function PeepForm() {
     const [user, setUser] = useState({
         name: ``,
-        peep: ``
+        peep: ``,
+        dateCreated: Date.now()
     });
 
     const handleChange = e => {
