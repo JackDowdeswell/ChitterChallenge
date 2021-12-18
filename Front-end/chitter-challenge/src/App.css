@@ -1,0 +1,23 @@
+.app {
+  text-align: center;
+  background-color: #15202B;
+}
+
+.bird {
+  display: inline;
+}
+
+.chitterTitle {
+  display: inline;
+  color: white;
+  font-family: Helvetica;
+  padding-bottom: 10px;
+}
+
+.container {
+  padding-bottom: 10px;
+}
+
+.form-label {
+  color: white;
+}
