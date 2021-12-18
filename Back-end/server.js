@@ -1,14 +1,17 @@
 import express from 'express';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 // app.use(`/login`, login);
 // app.use(`/register`, register);
 
+app.get('/', (req, res) => {
+    res.send("Test");
+})
 
 // const main = async () => {
 //     console.log(`Connecting to DB @ mongodb://localhost:27017/chitter`);
