@@ -2,13 +2,14 @@ import express from 'express';
 
 const router = express.Router();
 
-import Peep from '../models/peepSchema.js';
+import User from '../models/userSchema.js';
 
 router.route(`/`)
     .post((req, res) => {
-        const peep = new Peep(req.body);
+        console.log(req.body)
+        const user = new User(req.body);
 
-        peep.save(err => {
+        user.save(err => {
             if (err) {
                 res.send(err);
             }

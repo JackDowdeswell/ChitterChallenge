@@ -1,6 +1,7 @@
 .app {
   text-align: center;
   background-color: #15202B;
+  padding-bottom: 20px;
 }
 
 .bird {
@@ -11,13 +12,16 @@
   display: inline;
   color: white;
   font-family: Helvetica;
-  padding-bottom: 10px;
 }
 
 .container {
   padding-bottom: 6px;
+  width: 30% !important;
 }
 
 .form-label {
   color: white;
+}
+.name-form {
+  padding-top: 20px;
 }
