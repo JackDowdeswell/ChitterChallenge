@@ -28,7 +28,7 @@ export default function PeepForm({ setLoginUser, user }) {
             alert(res.data);
             return;
         }
-        alert(`Invalid input`);
+        alert(`You are either not logged in or have not typed a peep!`);
     }
 
     return (
@@ -49,7 +49,9 @@ export default function PeepForm({ setLoginUser, user }) {
                 <button type="button" className="viewAll btn btn-warning">View all Peeps</button>
             </Link>
 
-            <button onClick={() => setLoginUser({})} type="button" className="viewAll btn btn-warning">Log out</button>
+            <Link to="/">
+                <button onClick={() => setLoginUser({})} type="button" className="viewAll btn btn-warning">Log out</button>
+            </Link>
         </>
     )
 }

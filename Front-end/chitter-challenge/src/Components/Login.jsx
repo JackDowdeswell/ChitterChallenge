@@ -30,7 +30,7 @@ export default function LogIn({ setLoginUser }) {
     };
     return (
         <>
-            {loggedIn && <Navigate to="/" state={{ from: location }} />}
+            {loggedIn && <Navigate to="/newpeep" state={{ from: location }} />}
             <form onSubmit={login}>
                 <div className=" signUp displayPeeps container shadow-sm p-3 mb-5 bg-warning rounded">
                     <h1>Log in</h1>

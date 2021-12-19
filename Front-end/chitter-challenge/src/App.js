@@ -15,8 +15,8 @@ function App() {
       <Routes>
         <Route path="/peeps" element={<AllPeeps />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
-        <Route exact path="/" element={<PeepForm setLoginUser={setLoginUser} user={user} />} />
+        <Route path="/" element={<Login setLoginUser={setLoginUser} />} />
+        <Route exact path="/newpeep" element={<PeepForm setLoginUser={setLoginUser} user={user} />} />
       </Routes>
     </body>
   );

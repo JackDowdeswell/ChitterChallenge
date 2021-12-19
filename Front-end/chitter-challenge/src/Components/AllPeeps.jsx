@@ -24,7 +24,7 @@ export default function AllPeeps() {
                 <p className="allPeepsTitle">All Peeps:</p>
                 {allPeeps[0] ? allPeeps.slice(0).reverse().map(peep => <div className="displayPeeps container shadow-sm p-3 mb-5 bg-warning rounded">User: {peep.username}<br></br>"{peep.message}"<br></br>Date posted: {peep.dateCreated}</div>) : <div className="allPeepsTitle">No peeps found!</div>}
             </div>
-            <Link to="/">
+            <Link to="/newpeep">
                 <button type="button" className="viewAll btn btn-warning">Create a new Peep!</button>
             </Link>
         </>

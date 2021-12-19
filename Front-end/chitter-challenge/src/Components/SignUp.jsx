@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function SignUp() {
@@ -41,7 +41,7 @@ export default function SignUp() {
 
                 <div className="clearfix">
                     <Link to="/">
-                        <button type="button" className="signupbtn">Cancel</button>
+                        <button type="button" className="signupbtn">Already have an account? Log in</button>
                     </Link>
                     <button type="submit" className="signupbtn">Sign Up</button>
                 </div>
