@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 
 import { getPeeps } from './Routes/peep.js';
 import { signUp } from './Routes/signup.js';
+import { login } from './Routes/login.js';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(`/peep`, getPeeps);
 app.use(`/signup`, signUp);
+app.use(`/login`, login);
 // app.use(`/register`, register);
 
 // app.post('/', (req, res) => {

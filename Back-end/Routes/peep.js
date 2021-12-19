@@ -6,6 +6,7 @@ import Peep from '../models/peepSchema.js';
 
 router.route(`/`)
     .post((req, res) => {
+        console.log(req.body)
         const peep = new Peep(req.body);
 
         peep.save(err => {

@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-export default function PeepForm() {
+export default function PeepForm({ setLoginUser, user }) {
+    const { username } = user;
     const [peep, setPeep] = useState({
-        username: ``,
         message: ``,
         dateCreated: Date.now()
     });
@@ -20,9 +20,10 @@ export default function PeepForm() {
 
     const sendPeep = async (e) => {
         e.preventDefault();
-        const { username, message } = peep;
+        const { message } = peep;
+        console.log(username);
         if (username && message) {
-            const res = await axios.post(`/peep`, peep);
+            const res = await axios.post(`/peep`, username, peep);
             alert(res.data);
             return;
         }
@@ -32,10 +33,11 @@ export default function PeepForm() {
     return (
         <>
             <form onSubmit={sendPeep}>
-                <div className='mb-3 container'>
+                {/* <div className='mb-3 container'>
                     <label className="form-label name-form">Enter your name:</label>
                     <input type="text" id="name" name="username" className='form-control' placeholder='Full Name' onChange={handleChange}></input>
-                </div>
+                </div> */}
+                <div className="form-label">Hello {username}!</div>
                 <div className="mb-3 container">
                     <label className="form-label">Start typing your peep in the box below</label>
                     <textarea className="form-control" id="peepTextbox" name="message" rows="3" placeholder='I had a great day today...' onChange={handleChange}></textarea>
@@ -48,6 +50,8 @@ export default function PeepForm() {
             <Link to="/peeps">
                 <button type="button" className="viewAll btn btn-warning">View all Peeps</button>
             </Link>
+
+            <button onClick={() => setLoginUser({})}>Log out</button>
         </>
     )
 }

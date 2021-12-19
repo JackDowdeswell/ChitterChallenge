@@ -29,25 +29,23 @@ export default function SignUp() {
     }
 
     return (
-        <>
-            <form onSubmit={signUp}>
-                <div className=" signUp displayPeeps container shadow-sm p-3 mb-5 bg-warning rounded">
-                    <h1>Sign Up</h1>
-                    <p>Please fill in this form to create an account.</p>
-                    <label className="signUpField"><b>Username:</b></label>
-                    <input type="text" placeholder="Enter Username" name="username" required value={user.username} onChange={handleChange} /><br></br>
+        <form onSubmit={signUp}>
+            <div className=" signUp displayPeeps container shadow-sm p-3 mb-5 bg-warning rounded">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+                <label className="signUpField"><b>Username:</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required value={user.username} onChange={handleChange} /><br></br>
 
-                    <label className="signUpField"><b>Password:</b></label>
-                    <input type="password" placeholder="Enter Password" name="password" required value={user.password} onChange={handleChange} />
+                <label className="signUpField"><b>Password:</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required value={user.password} onChange={handleChange} />
 
-                    <div className="clearfix">
-                        <Link to="/">
-                            <button type="button" className="signupbtn">Cancel</button>
-                        </Link>
-                        <button type="submit" className="signupbtn">Sign Up</button>
-                    </div>
+                <div className="clearfix">
+                    <Link to="/">
+                        <button type="button" className="signupbtn">Cancel</button>
+                    </Link>
+                    <button type="submit" className="signupbtn">Sign Up</button>
                 </div>
-            </form>
-        </>
+            </div>
+        </form>
     )
 }
