@@ -26,7 +26,6 @@ export default function LogIn({ setLoginUser }) {
         const res = await axios.post(`/login`, user);
         alert(res.data.message);
         setLoggedIn(res.data.user ? true : false);
-        setUser({ username: ``, password: `` });
         setLoginUser(res.data.user);
     };
     return (

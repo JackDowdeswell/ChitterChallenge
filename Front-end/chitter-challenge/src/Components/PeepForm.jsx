@@ -6,6 +6,7 @@ import axios from 'axios';
 export default function PeepForm({ setLoginUser, user }) {
     const { username } = user;
     const [peep, setPeep] = useState({
+        username: username,
         message: ``,
         dateCreated: Date.now()
     });
@@ -21,9 +22,9 @@ export default function PeepForm({ setLoginUser, user }) {
     const sendPeep = async (e) => {
         e.preventDefault();
         const { message } = peep;
-        console.log(username);
+        console.log(peep);
         if (username && message) {
-            const res = await axios.post(`/peep`, username, peep);
+            const res = await axios.post(`/peep`, peep);
             alert(res.data);
             return;
         }
@@ -33,10 +34,7 @@ export default function PeepForm({ setLoginUser, user }) {
     return (
         <>
             <form onSubmit={sendPeep}>
-                {/* <div className='mb-3 container'>
-                    <label className="form-label name-form">Enter your name:</label>
-                    <input type="text" id="name" name="username" className='form-control' placeholder='Full Name' onChange={handleChange}></input>
-                </div> */}
+
                 <div className="form-label">Hello {username}!</div>
                 <div className="mb-3 container">
                     <label className="form-label">Start typing your peep in the box below</label>
@@ -51,7 +49,7 @@ export default function PeepForm({ setLoginUser, user }) {
                 <button type="button" className="viewAll btn btn-warning">View all Peeps</button>
             </Link>
 
-            <button onClick={() => setLoginUser({})}>Log out</button>
+            <button onClick={() => setLoginUser({})} type="button" className="viewAll btn btn-warning">Log out</button>
         </>
     )
 }
