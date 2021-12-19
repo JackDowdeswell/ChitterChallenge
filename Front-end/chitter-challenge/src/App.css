@@ -37,6 +37,19 @@
   padding-top: 20px;
 }
 
+.signUp {
+margin-top: 20px;
+}
+
+.signupbtn {
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.signUpField {
+  padding: 10px;
+}
+
 .viewAll {
   margin-top: 50px;
 }
