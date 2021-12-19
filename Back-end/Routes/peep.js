@@ -2,13 +2,13 @@ import express from 'express';
 
 const router = express.Router();
 
-import User from '../models/userSchema.js';
+import Peep from '../models/peepSchema.js';
 
 router.route(`/`)
     .post((req, res) => {
-        const user = new User(req.body);
+        const peep = new Peep(req.body);
 
-        user.save(err => {
+        peep.save(err => {
             if (err) {
                 res.send(err);
             }
@@ -19,13 +19,13 @@ router.route(`/`)
     })
 
     .get((req, res) => {
-        User.find({}, (err, users) => {
+        Peep.find({}, (err, peeps) => {
             if (err) {
                 res.send(err);
                 next();
             }
-            res.send({ users });
+            res.send({ peeps });
         })
     })
 
-export { router as peep };
+export { router as getPeeps };

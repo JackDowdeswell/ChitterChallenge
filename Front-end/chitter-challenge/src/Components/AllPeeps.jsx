@@ -11,7 +11,7 @@ export default function AllPeeps() {
             let res = await axios.get(`/peep`);
             // res = await res.jsons()
             // console.log(res.data.users[0])
-            setAllPeeps(res.data.users)
+            setAllPeeps(res.data.peeps)
         }
 
         getPeeps()
@@ -22,7 +22,7 @@ export default function AllPeeps() {
         <>
             <div>
                 <p className="allPeepsTitle">All Peeps:</p>
-                {allPeeps[0] ? allPeeps.slice(0).reverse().map(peep => <div className="displayPeeps container shadow-sm p-3 mb-5 bg-warning rounded">User: {peep.name}<br></br>"{peep.peep}"<br></br>Date posted: {peep.dateCreated}</div>) : <div className="allPeepsTitle">No peeps found!</div>}
+                {allPeeps[0] ? allPeeps.slice(0).reverse().map(peep => <div className="displayPeeps container shadow-sm p-3 mb-5 bg-warning rounded">User: {peep.username}<br></br>"{peep.message}"<br></br>Date posted: {peep.dateCreated}</div>) : <div className="allPeepsTitle">No peeps found!</div>}
             </div>
             <Link to="/">
                 <button type="button" className="viewAll btn btn-warning">Create a new Peep!</button>

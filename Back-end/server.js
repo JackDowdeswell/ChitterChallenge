@@ -1,14 +1,16 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-import { peep } from './Routes/peep.js';
+import { getPeeps } from './Routes/peep.js';
+import { signUp } from './Routes/signup.js';
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(`/peep`, peep);
+app.use(`/peep`, getPeeps);
+app.use(`/signup`, signUp);
 // app.use(`/register`, register);
 
 // app.post('/', (req, res) => {

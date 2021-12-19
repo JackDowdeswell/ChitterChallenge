@@ -1,9 +1,8 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-    name: String,
-    peep: String,
-    dateCreated: Date
+    username: String,
+    password: String,
 });
 
 const User = new mongoose.model("User", userSchema);
